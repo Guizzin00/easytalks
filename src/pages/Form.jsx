@@ -23,9 +23,15 @@ export default function FormPage() {
                 <label>DEPARTAMENTO</label>
                 <select className="form-input form-select">
                   <option value="">Selecione</option>
-                  <option value="rh">Recursos Humanos</option>
+                  <option value="diretoria">Diretoria</option>
+                  <option value="comercial">Comercial</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="operacoes">Operações</option>
+                  <option value="cx">CX</option>
+                  <option value="financeiro">Financeiro</option>
+                  <option value="rh">RH</option>
                   <option value="ti">TI</option>
-                  <option value="mkt">Marketing</option>
+                  <option value="outro">Outro</option>
                 </select>
               </div>
             </div>
