@@ -1,0 +1,53 @@
+.home-main {
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.home-container {
+  max-width: 600px;
+  width: 100%;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  padding: 0.3rem 1rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.home-title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+}
+
+.home-title-highlight {
+  color: var(--accent-color);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.home-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.btn-participar {
+  padding: 0.8rem 2.5rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 3rem;
+  }
+}

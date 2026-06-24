@@ -1,0 +1,74 @@
+.testimonial-section {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto 4rem;
+}
+
+.testimonial-form {
+  padding: 1.5rem;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+}
+
+.testimonial-form.focused {
+  border-color: rgba(138, 43, 226, 0.5);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.2), var(--glass-shadow);
+  transform: translateY(-2px);
+}
+
+.testimonial-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1.1rem;
+  resize: none;
+  outline: none;
+  line-height: 1.5;
+}
+
+.testimonial-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.char-count {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--text-primary);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

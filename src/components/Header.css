@@ -1,0 +1,48 @@
+.header {
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  padding: 1.5rem 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  color: var(--text-primary);
+}
+
+.logo-dot {
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.logo-text {
+  padding-top: 1px;
+}
+
+.login-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: color var(--transition-speed) ease;
+}
+
+.login-link:hover {
+  color: var(--accent-color);
+}
