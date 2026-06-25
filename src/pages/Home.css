@@ -5,7 +5,7 @@
 }
 
 .home-container {
-  max-width: 600px;
+  max-width: 900px;
   width: 100%;
 }
 
@@ -49,5 +49,19 @@
 @media (max-width: 768px) {
   .home-title {
     font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 2.2rem;
+  }
+  .btn-participar {
+    width: 100%;
+    padding: 0.8rem 1rem;
+  }
+  .home-main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }

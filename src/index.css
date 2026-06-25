@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap");
 
 :root {
   --bg-color: #ffffff;
   --text-primary: #1a1a1a;
   --text-secondary: #6b7280;
-  --accent-color: #3ebcb6; /* Cyan / Teal */
-  --accent-hover: #35a5a0;
+  --accent-color: #00A6B9;
+  --accent-hover: #008b9b;
+  --brand-green: #72BF44;
+  --brand-yellow: #FDC500;
   --border-color: #e5e7eb;
   --transition-speed: 0.2s;
 }
@@ -17,7 +19,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: var(--bg-color);
   color: var(--text-primary);
   min-height: 100vh;
@@ -32,8 +34,13 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -49,10 +56,22 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 1rem;
+  }
+}
+
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
@@ -60,9 +79,15 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
+.delay-1 {
+  animation-delay: 0.1s;
+}
+.delay-2 {
+  animation-delay: 0.2s;
+}
+.delay-3 {
+  animation-delay: 0.3s;
+}
 
 /* Global Buttons */
 .btn-primary {
@@ -71,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   border-radius: 9999px;
   padding: 0.75rem 2rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;

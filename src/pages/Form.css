@@ -124,4 +124,14 @@
   .form-row {
     grid-template-columns: 1fr;
   }
+  
+  .form-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .form-main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }

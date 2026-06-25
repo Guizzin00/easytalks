@@ -1,0 +1,63 @@
+.export-card {
+  width: 600px;
+  height: 300px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+.export-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.quote-mark {
+  font-family: "Georgia", serif;
+  font-size: 6rem;
+  color: rgba(0, 166, 185, 0.4);
+  position: absolute;
+  top: 1rem; /* Mais para cima */
+  left: 1.5rem;
+  line-height: 1;
+  z-index: -1;
+}
+
+.export-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-top: 3rem; /* Mais para baixo ainda */
+  margin-bottom: 1.5rem;
+  margin-left: 2rem; /* Espaçamento da aspas, empurrando o texto mais para o centro */
+  text-align: left;
+}
+
+.export-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.export-logo-large {
+  width: 130px;
+  height: auto;
+  display: block;
+}
+
+.export-bottom-bar {
+  height: 12px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent-color), var(--brand-green), var(--brand-yellow), var(--accent-color));
+  background-size: 200% auto;
+}

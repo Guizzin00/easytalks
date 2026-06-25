@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { Send } from 'lucide-react';
-import './TestimonialForm.css';
+import React, { useState } from "react";
+import { Send } from "lucide-react";
+import "./TestimonialForm.css";
 
 export default function TestimonialForm() {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [isFocused, setIsFocused] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!text.trim()) return;
     // Mock submission logic
-    console.log('Testimonial submitted:', text);
-    setText('');
-    alert('Depoimento enviado com sucesso! Muito obrigado.');
+    console.log("Testimonial submitted:", text);
+    setText("");
+    alert("Depoimento enviado com sucesso! Muito obrigado.");
   };
 
   return (
     <div className="testimonial-section animate-fade-in delay-4">
-      <form 
-        className={`testimonial-form glass-panel ${isFocused ? 'focused' : ''}`}
+      <form
+        className={`testimonial-form glass-panel ${isFocused ? "focused" : ""}`}
         onSubmit={handleSubmit}
       >
         <textarea
@@ -30,14 +30,10 @@ export default function TestimonialForm() {
           onBlur={() => setIsFocused(false)}
           rows={5}
         ></textarea>
-        
+
         <div className="form-footer">
           <span className="char-count">{text.length} caracteres</span>
-          <button 
-            type="submit" 
-            className="submit-btn"
-            disabled={!text.trim()}
-          >
+          <button type="submit" className="submit-btn" disabled={!text.trim()}>
             <span>Enviar</span>
             <Send size={16} />
           </button>
