@@ -161,9 +161,6 @@
 .btn-download-jpg:hover {
   background: rgba(0, 166, 185, 0.1);
 }
-  color: #64748b;
-  font-size: 1.05rem;
-}
 
 /* Banner Erro */
 .admin-error-banner {
