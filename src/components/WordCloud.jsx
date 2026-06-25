@@ -23,26 +23,30 @@ export default function WordCloud({ messages }) {
     // A biblioteca espera a lista no formato [ ['palavra', tamanho], ... ]
     // Definimos o peso com base no valor máximo para não estourar a tela.
     const maxVal = processedData[0].value;
-    const sizeMultiplier = 90 / maxVal; // Peso visual no canvas
+    const sizeMultiplier = 360 / maxVal; // 120 * 3 para suportar a tela 3x maior (Alta Resolução)
 
     const list = processedData.map(item => [
       item.text, 
-      Math.max(16, item.value * sizeMultiplier), // Tamanho em pixels
-      item.value, // Guarda a frequência original na posição 2
-      item.percentage // Guarda o percentual na posição 3
+      Math.max(48, item.value * sizeMultiplier), // Tamanhos nativos 3x maiores
+      item.value,
+      item.percentage
     ]);
 
-    const colors = ["#00A6B9", "#72BF44", "#FDC500", "#1a1a1a", "#008b9b", "#22c55e"];
+    const colors = ["#00A6B9", "#72BF44", "#FDC500", "#006EA0"];
 
     WordCloudLib(canvasRef.current, {
       list: list,
-      fontFamily: '"Playfair Display", serif',
+      fontFamily: '"Inter", sans-serif',
       fontWeight: 'bold',
       color: () => colors[Math.floor(Math.random() * colors.length)],
       backgroundColor: 'transparent',
-      rotateRatio: 0.2,
-      rotationSteps: 2,
-      gridSize: 12,
+      minRotation: -Math.PI / 2, /* Permite rotação de -90 graus */
+      maxRotation: Math.PI / 2,  /* Permite rotação de 90 graus */
+      rotationSteps: 2, /* Força a ser apenas Horizontal ou Vertical perfeito (sem diagonais bagunçadas) */
+      rotateRatio: 0.4, /* 40% das palavras vão ficar na vertical para dar o charme clássico da nuvem */
+      gridSize: 30, /* Ajustado para a resolução 3x */
+      shape: 'circle',
+      ellipticity: 0.5, /* Como o canvas é retangular (900x400), o círculo vira um oval longo que preenche tudo! */
       shrinkToFit: true,
       hover: (item, dimension, event) => {
         if (!item) {
@@ -63,10 +67,18 @@ export default function WordCloud({ messages }) {
 
   const handleDownload = async () => {
     if (!containerRef.current) return;
-    const canvasObj = await html2canvas(containerRef.current, { scale: 2, backgroundColor: "#ffffff" });
+    
+    // Simula a largura de tela de um computador (Desktop) no html2canvas
+    // Isso impede que o design se quebre ou "junte tudo" ao baixar pelo celular.
+    const canvasObj = await html2canvas(containerRef.current, { 
+      scale: 3, 
+      backgroundColor: "#ffffff",
+      windowWidth: 1200
+    });
+
     canvasObj.toBlob((blob) => {
-      saveAs(blob, "easyplan_nuvem_de_palavras.jpg");
-    }, "image/jpeg", 0.95);
+      saveAs(blob, "easyplan_nuvem_de_palavras.png");
+    }, "image/png");
   };
 
   if (!processedData || processedData.length === 0) {
@@ -91,15 +103,15 @@ export default function WordCloud({ messages }) {
           <p>Motor de Processamento de Linguagem Natural (NLP) ativo. Analisando todos os depoimentos.</p>
         </div>
         <button className="btn-export btn-export-highlight" onClick={handleDownload}>
-          <DownloadCloud size={16} /> Baixar JPG
+          <DownloadCloud size={16} /> Baixar PNG
         </button>
       </div>
       
       <div className="wordcloud-canvas-wrapper" ref={containerRef}>
-         {/* O width/height determina o espaço de "desenho" físico da lib */}
-         <canvas ref={canvasRef} width={900} height={400} className="wordcloud-canvas-element" />
+         {/* Resolução nativa 3x maior (2700x1200) comprimida via CSS para super nitidez */}
+         <canvas ref={canvasRef} width={2700} height={1200} style={{ width: '100%', maxWidth: '900px', height: 'auto' }} className="wordcloud-canvas-element" />
          <div className="wordcloud-watermark">
-          <img src="/logo.png" alt="EasyPlan" />
+          <img src="/Ativo%2020.svg" alt="EasyPlan Logo" />
         </div>
       </div>
     </div>
