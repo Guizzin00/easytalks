@@ -5,7 +5,7 @@ const ExportCardTemplate = forwardRef(({ message }, ref) => {
   if (!message) return null;
 
   return (
-    <div className="export-wrapper" style={{ position: "absolute", top: "-9999px", left: "-9999px", opacity: 0, zIndex: -1 }}>
+    <div className="export-wrapper" style={{ position: "fixed", top: 0, left: "-2000px", width: "600px", opacity: 0, zIndex: -1, pointerEvents: "none" }}>
       <div ref={ref} className="export-card">
         <div className="export-card-content">
           <div className="quote-mark">"</div>

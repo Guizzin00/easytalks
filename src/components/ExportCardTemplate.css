@@ -1,7 +1,9 @@
 .export-card {
-  width: 600px;
+  width: 600px !important;
+  max-width: 600px !important;
+  min-width: 600px !important;
   min-height: 300px;
-  height: auto;
+  height: max-content;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
